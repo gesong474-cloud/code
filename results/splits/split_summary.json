@@ -1,0 +1,638 @@
+{
+  "dataset": "GFP_AEQVI_Sarkisyan_2016",
+  "status": "passed",
+  "total_variants": 51714,
+  "random_seed": 42,
+  "target_sizes": {
+    "train_initial": 3000,
+    "validation": 1000,
+    "test": 5000,
+    "candidate_pool": 42714
+  },
+  "stratification_labels": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6-7",
+    "8-15"
+  ],
+  "stratification_variable": "mutation count group",
+  "assignment_order": [
+    "train_initial",
+    "validation",
+    "test",
+    "candidate_pool (remainder)"
+  ],
+  "canonical_input_order": "Lexicographic SHA-256 sequence ID",
+  "random_state_derivation": "NumPy SeedSequence; separate streams for allocation and each export order",
+  "derived_random_states": [
+    3444837047,
+    2669555309,
+    2046530742,
+    3581440988,
+    1691623607,
+    2099784219,
+    1184028159,
+    862288241,
+    1333843299
+  ],
+  "versions": {
+    "numpy": "1.26.4",
+    "scikit_learn": "1.5.1",
+    "matplotlib": "3.9.2"
+  },
+  "reference_sequence_length": 238,
+  "fitness_threshold": {
+    "value": 2.5,
+    "comparison": ">="
+  },
+  "input_files_sha256": {
+    "data/processed/gfp_processed.csv": "7b1dddfe9bac137af595374b5fea9be9215500fa9893c2f8b8a2e291ed4fcf47",
+    "data/processed/gfp_wildtype.fasta": "2f7ef468edac9a00aab7658250d3b9ec94a96b0b3fbd5087ea561a2673cea23f",
+    "data/processed/gfp_metadata.json": "9257639c1f71f90565a5f378c9fc17c22ee368ea4567438009e7336ec97e1ca9",
+    "results/eda/data_quality_report.json": "8b8d4213c1ffb3d11f17fb8ecb2bc1ff36ce32daf92e37ae223b0ec13325b003"
+  },
+  "output_files_sha256": {
+    "data/splits/candidate_pool.csv": "94fe4536a2dca0aab2f203fbd8e6f85e981b57f9e029b358003438801889fc14",
+    "data/splits/oracle_labels.csv": "02a1831130e7a7e0f551a11f4336aa23b4b4dd1afa93b35e27cee6f72cbea5ca",
+    "data/splits/split_manifest.csv": "52a1bf7a46f672706d80e452ddb285717c7d870667f1d16a8d1184addaceb3e4",
+    "data/splits/test.csv": "a8e563fb7ebc6d552ada386656ca5735c288faa2719b2f445d74866932d891e2",
+    "data/splits/train_initial.csv": "8a581a9f51f01fdd16a887cfb6bb5c00c1e78908989a45301586ba528ca01054",
+    "data/splits/validation.csv": "c8ffb34cbb9b7f2dd76ac89ee15a67eddb00acd9061cfb80d1e7f8121046a6e5",
+    "results/splits/figure_1_mutation_count_distribution.png": "fc5ee5a1b9d161c746b88f912113c880006b341879517c0527f00f96e262fcd1",
+    "results/splits/figure_2_fitness_distribution.png": "90d12023f9dc1791b5d9eceacbe23c7285e79d1763002e58fafd518f2514c876",
+    "results/splits/split_distribution.csv": "241a80749a67a8cfeb5e3bc308735123ff3deb31d887967d9e5f0e361c82ed7b"
+  },
+  "output_hash_scope": "All data split tables, the distribution table and both figures; this summary is excluded.",
+  "checks": {
+    "target_sample_counts": true,
+    "disjoint_experiment_ids": true,
+    "disjoint_protein_sequences": true,
+    "exact_input_union": true,
+    "no_duplicates_or_losses": true,
+    "candidate_schema_has_no_labels": true,
+    "candidate_oracle_bijection": true,
+    "source_sequences_mutants_and_fitness_preserved": true,
+    "all_mutation_counts_preserved": true,
+    "experiment_ids_unique_and_sequence_derived": true,
+    "candidate_and_training_schema_has_no_source_row_id": true,
+    "manifest_mapping_verified": true
+  },
+  "reproducibility": {
+    "same_seed_identical_assignment_and_order": true,
+    "different_seed_distinct_valid_partition": true,
+    "alternate_seed": 43,
+    "membership_changes_by_split": {
+      "train_initial": 2791,
+      "validation": 980,
+      "test": 4510,
+      "candidate_pool": 7411
+    }
+  },
+  "splits": {
+    "train_initial": {
+      "sample_count": 3000,
+      "fraction_total": 0.0580113702285648,
+      "fitness": {
+        "count": 3000,
+        "min": 1.2927631864700002,
+        "max": 4.0308440072400025,
+        "mean": 2.6515651030772736,
+        "median": 3.301912919395,
+        "std_sample": 1.063525842300403,
+        "quantiles": {
+          "0.01": 1.3001746209267,
+          "0.05": 1.3010299896189998,
+          "0.25": 1.428343488925,
+          "0.5": 3.301912919395,
+          "0.75": 3.6201511422750006,
+          "0.95": 3.7646905000624997,
+          "0.99": 3.873790377083
+        }
+      },
+      "at_or_above_threshold_count": 1733,
+      "at_or_above_threshold_fraction": 0.5776666666666667,
+      "exact_mutation_counts": {
+        "1": {
+          "count": 63,
+          "fraction": 0.021
+        },
+        "2": {
+          "count": 741,
+          "fraction": 0.247
+        },
+        "3": {
+          "count": 716,
+          "fraction": 0.23866666666666667
+        },
+        "4": {
+          "count": 544,
+          "fraction": 0.18133333333333335
+        },
+        "5": {
+          "count": 396,
+          "fraction": 0.132
+        },
+        "6": {
+          "count": 269,
+          "fraction": 0.08966666666666667
+        },
+        "7": {
+          "count": 127,
+          "fraction": 0.042333333333333334
+        },
+        "8": {
+          "count": 77,
+          "fraction": 0.025666666666666667
+        },
+        "9": {
+          "count": 38,
+          "fraction": 0.012666666666666666
+        },
+        "10": {
+          "count": 19,
+          "fraction": 0.006333333333333333
+        },
+        "11": {
+          "count": 5,
+          "fraction": 0.0016666666666666668
+        },
+        "12": {
+          "count": 4,
+          "fraction": 0.0013333333333333333
+        },
+        "13": {
+          "count": 1,
+          "fraction": 0.0003333333333333333
+        },
+        "14": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "15": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "stratification_groups": {
+        "1": {
+          "count": 63,
+          "fraction": 0.021
+        },
+        "2": {
+          "count": 741,
+          "fraction": 0.247
+        },
+        "3": {
+          "count": 716,
+          "fraction": 0.23866666666666667
+        },
+        "4": {
+          "count": 544,
+          "fraction": 0.18133333333333335
+        },
+        "5": {
+          "count": 396,
+          "fraction": 0.132
+        },
+        "6-7": {
+          "count": 396,
+          "fraction": 0.132
+        },
+        "8-15": {
+          "count": 144,
+          "fraction": 0.048
+        }
+      },
+      "difference_from_full": {
+        "mean_fitness_delta": -0.0063796548485330895,
+        "median_fitness_delta": 0.014626461304999339,
+        "threshold_rate_delta_percentage_points": -0.41100282322001913,
+        "fitness_histogram_total_variation": 0.03202533163166648
+      }
+    },
+    "validation": {
+      "sample_count": 1000,
+      "fraction_total": 0.0193371234095216,
+      "fitness": {
+        "count": 1000,
+        "min": 1.29760196122,
+        "max": 4.11357575293,
+        "mean": 2.625136723723014,
+        "median": 3.2371499892549997,
+        "std_sample": 1.05645887495394,
+        "quantiles": {
+          "0.01": 1.3000280675001001,
+          "0.05": 1.301029992206,
+          "0.25": 1.4281760481474999,
+          "0.5": 3.2371499892549997,
+          "0.75": 3.6114062838225025,
+          "0.95": 3.7708010517499995,
+          "0.99": 3.8416386612037003
+        }
+      },
+      "at_or_above_threshold_count": 568,
+      "at_or_above_threshold_fraction": 0.568,
+      "exact_mutation_counts": {
+        "1": {
+          "count": 21,
+          "fraction": 0.021
+        },
+        "2": {
+          "count": 247,
+          "fraction": 0.247
+        },
+        "3": {
+          "count": 239,
+          "fraction": 0.239
+        },
+        "4": {
+          "count": 181,
+          "fraction": 0.181
+        },
+        "5": {
+          "count": 132,
+          "fraction": 0.132
+        },
+        "6": {
+          "count": 82,
+          "fraction": 0.082
+        },
+        "7": {
+          "count": 50,
+          "fraction": 0.05
+        },
+        "8": {
+          "count": 30,
+          "fraction": 0.03
+        },
+        "9": {
+          "count": 7,
+          "fraction": 0.007
+        },
+        "10": {
+          "count": 9,
+          "fraction": 0.009
+        },
+        "11": {
+          "count": 2,
+          "fraction": 0.002
+        },
+        "12": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "13": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "14": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "15": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "stratification_groups": {
+        "1": {
+          "count": 21,
+          "fraction": 0.021
+        },
+        "2": {
+          "count": 247,
+          "fraction": 0.247
+        },
+        "3": {
+          "count": 239,
+          "fraction": 0.239
+        },
+        "4": {
+          "count": 181,
+          "fraction": 0.181
+        },
+        "5": {
+          "count": 132,
+          "fraction": 0.132
+        },
+        "6-7": {
+          "count": 132,
+          "fraction": 0.132
+        },
+        "8-15": {
+          "count": 48,
+          "fraction": 0.048
+        }
+      },
+      "difference_from_full": {
+        "mean_fitness_delta": -0.03280803420279277,
+        "median_fitness_delta": -0.05013646883500078,
+        "threshold_rate_delta_percentage_points": -1.3776694898866904,
+        "fitness_histogram_total_variation": 0.06345098039215685
+      }
+    },
+    "test": {
+      "sample_count": 5000,
+      "fraction_total": 0.096685617047608,
+      "fitness": {
+        "count": 5000,
+        "min": 1.29503085162,
+        "max": 4.12310906338,
+        "mean": 2.6573480595424064,
+        "median": 3.278283229805,
+        "std_sample": 1.0507344873423008,
+        "quantiles": {
+          "0.01": 1.2998497877769999,
+          "0.05": 1.301029987109,
+          "0.25": 1.4492062891049997,
+          "0.5": 3.278283229805,
+          "0.75": 3.605161521715,
+          "0.95": 3.760762494194,
+          "0.99": 3.8512175071003005
+        }
+      },
+      "at_or_above_threshold_count": 2905,
+      "at_or_above_threshold_fraction": 0.581,
+      "exact_mutation_counts": {
+        "1": {
+          "count": 105,
+          "fraction": 0.021
+        },
+        "2": {
+          "count": 1235,
+          "fraction": 0.247
+        },
+        "3": {
+          "count": 1192,
+          "fraction": 0.2384
+        },
+        "4": {
+          "count": 908,
+          "fraction": 0.1816
+        },
+        "5": {
+          "count": 660,
+          "fraction": 0.132
+        },
+        "6": {
+          "count": 410,
+          "fraction": 0.082
+        },
+        "7": {
+          "count": 250,
+          "fraction": 0.05
+        },
+        "8": {
+          "count": 145,
+          "fraction": 0.029
+        },
+        "9": {
+          "count": 48,
+          "fraction": 0.0096
+        },
+        "10": {
+          "count": 30,
+          "fraction": 0.006
+        },
+        "11": {
+          "count": 11,
+          "fraction": 0.0022
+        },
+        "12": {
+          "count": 2,
+          "fraction": 0.0004
+        },
+        "13": {
+          "count": 3,
+          "fraction": 0.0006
+        },
+        "14": {
+          "count": 1,
+          "fraction": 0.0002
+        },
+        "15": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "stratification_groups": {
+        "1": {
+          "count": 105,
+          "fraction": 0.021
+        },
+        "2": {
+          "count": 1235,
+          "fraction": 0.247
+        },
+        "3": {
+          "count": 1192,
+          "fraction": 0.2384
+        },
+        "4": {
+          "count": 908,
+          "fraction": 0.1816
+        },
+        "5": {
+          "count": 660,
+          "fraction": 0.132
+        },
+        "6-7": {
+          "count": 660,
+          "fraction": 0.132
+        },
+        "8-15": {
+          "count": 240,
+          "fraction": 0.048
+        }
+      },
+      "difference_from_full": {
+        "mean_fitness_delta": -0.0005966983834002626,
+        "median_fitness_delta": -0.009003228285000553,
+        "threshold_rate_delta_percentage_points": -0.0776694898866892,
+        "fitness_histogram_total_variation": 0.027872444599141413
+      }
+    },
+    "candidate_pool": {
+      "sample_count": 42714,
+      "fraction_total": 0.8259658893143056,
+      "fitness": {
+        "count": 42714,
+        "min": 1.28341923933,
+        "max": 4.11450284756,
+        "mean": 2.659230764637081,
+        "median": 3.28995803347,
+        "std_sample": 1.0592119164077678,
+        "quantiles": {
+          "0.01": 1.2999385965383,
+          "0.05": 1.3010299884495,
+          "0.25": 1.4263582241325,
+          "0.5": 3.28995803347,
+          "0.75": 3.6166809973075003,
+          "0.95": 3.76686823701,
+          "0.99": 3.8687502809552003
+        }
+      },
+      "at_or_above_threshold_count": 24880,
+      "at_or_above_threshold_fraction": 0.5824788125673082,
+      "exact_mutation_counts": {
+        "1": {
+          "count": 895,
+          "fraction": 0.020953317413494404
+        },
+        "2": {
+          "count": 10554,
+          "fraction": 0.24708526478437984
+        },
+        "3": {
+          "count": 10189,
+          "fraction": 0.23854005712412793
+        },
+        "4": {
+          "count": 7754,
+          "fraction": 0.18153298684272134
+        },
+        "5": {
+          "count": 5637,
+          "fraction": 0.1319707824132603
+        },
+        "6": {
+          "count": 3537,
+          "fraction": 0.08280657395701643
+        },
+        "7": {
+          "count": 2099,
+          "fraction": 0.049140796928407546
+        },
+        "8": {
+          "count": 1112,
+          "fraction": 0.026033618953972937
+        },
+        "9": {
+          "count": 534,
+          "fraction": 0.012501755864587722
+        },
+        "10": {
+          "count": 241,
+          "fraction": 0.00564217820854989
+        },
+        "11": {
+          "count": 100,
+          "fraction": 0.00234115278363066
+        },
+        "12": {
+          "count": 37,
+          "fraction": 0.0008662265299433441
+        },
+        "13": {
+          "count": 19,
+          "fraction": 0.00044481902888982537
+        },
+        "14": {
+          "count": 4,
+          "fraction": 9.364611134522639e-05
+        },
+        "15": {
+          "count": 2,
+          "fraction": 4.6823055672613196e-05
+        }
+      },
+      "stratification_groups": {
+        "1": {
+          "count": 895,
+          "fraction": 0.020953317413494404
+        },
+        "2": {
+          "count": 10554,
+          "fraction": 0.24708526478437984
+        },
+        "3": {
+          "count": 10189,
+          "fraction": 0.23854005712412793
+        },
+        "4": {
+          "count": 7754,
+          "fraction": 0.18153298684272134
+        },
+        "5": {
+          "count": 5637,
+          "fraction": 0.1319707824132603
+        },
+        "6-7": {
+          "count": 5636,
+          "fraction": 0.131947370885424
+        },
+        "8-15": {
+          "count": 2049,
+          "fraction": 0.047970220536592216
+        }
+      },
+      "difference_from_full": {
+        "mean_fitness_delta": 0.0012860067112745455,
+        "median_fitness_delta": 0.0026715753799995134,
+        "threshold_rate_delta_percentage_points": 0.07021176684413044,
+        "fitness_histogram_total_variation": 0.003454174138513227
+      }
+    }
+  },
+  "offline_distribution_review": {
+    "max_stratification_group_share_delta_percentage_points": 0.05175774451792736,
+    "max_threshold_rate_delta_percentage_points": 1.3776694898866904,
+    "max_abs_mean_fitness_delta": 0.03280803420279277,
+    "max_fitness_histogram_total_variation": 0.06345098039215685,
+    "fitness_histogram_bin_edges": [
+      1.28341923933,
+      1.3544114849312499,
+      1.4254037305325,
+      1.49639597613375,
+      1.567388221735,
+      1.6383804673362499,
+      1.7093727129375,
+      1.78036495853875,
+      1.8513572041400002,
+      1.92234944974125,
+      1.9933416953425,
+      2.06433394094375,
+      2.135326186545,
+      2.20631843214625,
+      2.2773106777475003,
+      2.3483029233487502,
+      2.41929516895,
+      2.49028741455125,
+      2.5612796601525005,
+      2.6322719057537505,
+      2.7032641513550004,
+      2.7742563969562504,
+      2.8452486425575003,
+      2.9162408881587503,
+      2.98723313376,
+      3.05822537936125,
+      3.1292176249625,
+      3.20020987056375,
+      3.2712021161650005,
+      3.342194361766251,
+      3.413186607367501,
+      3.4841788529687507,
+      3.5551710985700007,
+      3.6261633441712506,
+      3.6971555897725006,
+      3.7681478353737505,
+      3.8391400809750005,
+      3.9101323265762504,
+      3.9811245721775004,
+      4.05211681777875,
+      4.12310906338
+    ],
+    "label_access": "Offline audit only; do not expose to Agent or prediction models."
+  },
+  "future_experiment": {
+    "initial_labeled_samples": 3000,
+    "evolution_rounds": 3,
+    "budget_per_round": 20,
+    "total_additional_budget": 60,
+    "primary_seed": 42,
+    "oracle": "Experimentally measured DMS scores"
+  }
+}
