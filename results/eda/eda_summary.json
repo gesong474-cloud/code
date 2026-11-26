@@ -1,0 +1,109 @@
+{
+  "sample_count": 51714,
+  "fitness": {
+    "count": 51714,
+    "min": 1.28341923933,
+    "max": 4.12310906338,
+    "mean": 2.6579447579258066,
+    "median": 3.2872864580900005,
+    "std_sample": 1.0585739566162173,
+    "quantiles": {
+      "0.01": 1.2999463699929998,
+      "0.05": 1.3010299886,
+      "0.25": 1.42854326168,
+      "0.5": 3.2872864580900005,
+      "0.75": 3.6155929405575,
+      "0.95": 3.766216290815,
+      "0.99": 3.8680457820671
+    }
+  },
+  "fitness_threshold": {
+    "cutoff": 2.5,
+    "comparison": ">="
+  },
+  "fitness_bin": {
+    "0": {
+      "count": 21628,
+      "fraction": 0.41822330510113315
+    },
+    "1": {
+      "count": 30086,
+      "fraction": 0.5817766948988669
+    }
+  },
+  "mutation_count_range": [
+    1,
+    15
+  ],
+  "candidate_counts": {
+    "exactly_1_to_4": {
+      "1": 1084,
+      "2": 12777,
+      "3": 12336,
+      "4": 9387
+    },
+    "between_1_and_4_inclusive": 35584,
+    "all_mutation_counts": 51714
+  },
+  "coverage": {
+    "unique_substitution_count_all_variants": 1810,
+    "positions_covered_all_variants": 233,
+    "position_fraction_all_variants": 0.9789915966386554,
+    "positions_covered_by_independent_singles": 233,
+    "position_fraction_independent_singles": 0.9789915966386554,
+    "reference_length": 238
+  },
+  "independently_measured_singles": {
+    "fitness": {
+      "count": 1084,
+      "min": 1.29894092811,
+      "max": 4.11357579525,
+      "mean": 3.4327239757425385,
+      "median": 3.6493218850374998,
+      "std_sample": 0.6221829163773954,
+      "quantiles": {
+        "0.01": 1.3010299984891998,
+        "0.05": 1.4695782060715,
+        "0.25": 3.5153625722138626,
+        "0.5": 3.6493218850374998,
+        "0.75": 3.7069489441325,
+        "0.95": 3.78910570002755,
+        "0.99": 3.8508530336005005
+      }
+    },
+    "heatmap_cells_measured": 1084,
+    "heatmap_cells_na": 3676,
+    "unmeasured_possible_substitution_cells": 3438
+  },
+  "original_fitness_row_order": {
+    "nondecreasing": false,
+    "nonincreasing": false,
+    "adjacent_increases": 25818,
+    "adjacent_decreases": 25895,
+    "adjacent_ties": 0,
+    "pearson_row_index_vs_fitness": 0.2936109149410628,
+    "spearman_row_index_vs_fitness": 0.2896101850023687,
+    "consecutive_row_quartiles": [
+      {
+        "first_data_row": 1,
+        "last_data_row": 12929,
+        "median_fitness": 1.6599593968200002
+      },
+      {
+        "first_data_row": 12930,
+        "last_data_row": 25858,
+        "median_fitness": 2.9189006387900003
+      },
+      {
+        "first_data_row": 25859,
+        "last_data_row": 38786,
+        "median_fitness": 3.13894484316
+      },
+      {
+        "first_data_row": 38787,
+        "last_data_row": 51714,
+        "median_fitness": 3.58357126779
+      }
+    ]
+  }
+}

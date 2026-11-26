@@ -1,0 +1,112 @@
+{
+  "dataset": "GFP_AEQVI_Sarkisyan_2016",
+  "status": "passed",
+  "raw_variant_count": 51714,
+  "processed_variant_count": 51714,
+  "mutation_long_row_count": 200547,
+  "reference_counts": {
+    "passed": true,
+    "expected": {
+      "total": 51714,
+      "single": 1084,
+      "multiple": 50630
+    },
+    "observed": {
+      "total": 51714,
+      "single": 1084,
+      "multiple": 50630
+    }
+  },
+  "source_files_sha256": {
+    "GFP_AEQVI_Sarkisyan_2016.csv": "05b97d36a23363331b271edc56f1496b9a539109fd006e65532f91e9903a0838",
+    "DMS_substitutions.csv": "62ce7760fd66873cb06ccb2cf8c7fa1869e2ad974734b657609f4cbcc7faaf29"
+  },
+  "checks": {
+    "row_shape": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "missing_values": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "finite_numeric_values": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "binary_label_domain": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "duplicate_records": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "duplicate_mutant": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "duplicate_sequence": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "sequence_length": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "standard_amino_acids": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "mutation_format": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "position_bounds": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "reference_amino_acid": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "duplicate_mutation_positions": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "amino_acid_changes": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "sequence_reconstruction": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    },
+    "label_cutoff_consistency": {
+      "passed": true,
+      "affected_record_count": 0,
+      "records": []
+    }
+  },
+  "wild_type": {
+    "status": "absent",
+    "sequence_record_count": 0,
+    "measured_fitness_record_count": 0,
+    "records": []
+  }
+}

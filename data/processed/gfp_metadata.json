@@ -1,0 +1,31 @@
+{
+  "dataset_name": "GFP_AEQVI_Sarkisyan_2016",
+  "assay_index": "DMS_sub_67",
+  "protein_name": "GFP",
+  "uniprot_id": "GFP_AEQVI",
+  "source_organism": "Aequorea victoria",
+  "sequence_length": 238,
+  "assay_type": "FACS",
+  "selection_assay": "Fluorescence",
+  "phenotype": "mean_medianBrightness_per_aaseq",
+  "fitness_directionality": 1,
+  "fitness_directionality_description": "Higher DMS_score indicates higher fluorescence.",
+  "binarization_cutoff": 2.5,
+  "binarization_cutoff_source_value": "2.5",
+  "binarization_method": "manual",
+  "binary_label_rule": "DMS_score >= cutoff",
+  "literature_title": "Local fitness landscape of the green fluorescent protein",
+  "literature_doi": "10.1038/nature17995",
+  "literature_year": 2016,
+  "proteingym_download_release": "v1.3",
+  "proteingym_reference_row_version": "0.1",
+  "reference_file_scope": "GFP assay row from the ProteinGym v1.3 reference table",
+  "mutated_region_reported_by_source": "3-237",
+  "reference_total_variants": 51714,
+  "reference_single_variants": 1084,
+  "reference_multi_variants": 50630,
+  "source_files_sha256": {
+    "GFP_AEQVI_Sarkisyan_2016.csv": "05b97d36a23363331b271edc56f1496b9a539109fd006e65532f91e9903a0838",
+    "DMS_substitutions.csv": "62ce7760fd66873cb06ccb2cf8c7fa1869e2ad974734b657609f4cbcc7faaf29"
+  }
+}
