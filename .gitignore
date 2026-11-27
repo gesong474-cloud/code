@@ -12,3 +12,8 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .gfp-split-*/
+/models/*.joblib
+!/models/count_only.joblib
+!/models/ridge.joblib
+!/models/fitness_predictor.joblib
+.gfp-model-test-*/

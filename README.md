@@ -109,3 +109,47 @@ All four subsets contain all seven stratification groups. The largest difference
 ### Parameters reserved for virtual evolution
 
 The future experiment starts with 3,000 measured samples, uses 3 evolution rounds of 20 experiments each (60 additional experiments total), and uses primary seed 42. The Oracle returns experimentally measured DMS scores. Random Mutation, Model-only, LLM Agent, and Knowledge-enhanced LLM Agent share the same initial, validation, test and candidate splits and budget. Each method maintains its own experiment history.
+
+## Stage 3 — fitness predictor
+
+Stage 3 fits Count-only, Ridge and Random Forest regressors to the 3,000 initial measurements. The training script evaluates alternatives on the 1,000 validation samples and persists the chosen family, hyperparameters and artifact hashes before the test script opens the 5,000 independent test labels. There is no refit on validation data. The optional candidate smoke test predicts all 42,714 unlabeled sequences in batches of 1,024.
+
+Run from the repository root with Python 3.12 and the pinned dependencies:
+
+```sh
+python -m pip install -r requirements.txt
+python src/train_fitness.py
+python src/evaluate_fitness.py --candidate-smoke
+python -m unittest discover -s tests -v
+```
+
+The sparse CSR features use float32, with 20 amino acids in the fixed order `ACDEFGHIKLMNPQRSTVWY` at each of 238 positions. Ridge uses the 4,760 position-major values. Random Forest appends the Hamming distance to the reference as feature 4,761. The baseline uses that distance alone and estimates means from the training labels by exact count, then group, then overall. The model receives sequence-derived features only. The training process reads the reference, metadata, initial training and validation files. The evaluation process opens the test file after it verifies the model-selection lock and artifact hashes. Oracle labels and full-dataset EDA are outside both pipelines.
+
+Validation Spearman sets a 0.01 eligibility window relative to the best defined score. Inside the window, higher high-fitness validation Spearman wins, followed by a prespecified preference for simpler models. Apply the rule first within each family and again across the three representatives. The high-fitness threshold is the assay metadata cutoff of 2.5. Top-k score ties are ordered using a seed-42 hash of the experiment ID, independent of labels. IDs are used for joins and evaluation tie ordering.
+
+The four joblib artifacts are generated under `models/` by the training command. The compact Count-only, Ridge and selected models are tracked. The 14 MB forest file and locally refitted artifacts are Git-ignored. Regenerate all four artifacts before running the three-model evaluation from a fresh clone. Load trusted artifacts from the `src` Python import path:
+
+```python
+from fitness_model import FitnessPredictor
+
+model = FitnessPredictor.load("models/fitness_predictor.joblib")
+single_score = model.predict(sequence)
+batch_scores = model.predict(sequences, batch_size=1024)
+model.fit([{"sequence": measured_sequence, "fitness": measured_fitness}])
+model.save("models/refitted.joblib")
+```
+
+Pass the complete set of permitted labeled observations for a fixed-hyperparameter refit. Save each run in its own directory to retain prior artifacts.
+
+| Result under `results/fitness_model/` | Contents |
+|---|---|
+| `hyperparameter_search.csv` and `model_selection.json` | Every trial, validation metrics, timing, fixed selection and input/model hashes |
+| `training_summary.json` and `evaluation_summary.json` | Feature memory, software versions, reload check, test metrics, fallback and candidate smoke checks |
+| `model_metrics.csv`, `model_metrics_by_mutation_count.csv`, `top_k_performance.csv` | Overall, high-fitness, per-group and Top-k results |
+| `validation_predictions.csv` and `test_predictions.csv` | Variant-level predictions and signed residuals for each best family configuration |
+| `prediction_error_analysis.csv` | Observed best, overestimated and underestimated cases for the selected model |
+| `figure_*.png` | Five independent-test figures at 300 DPI |
+
+Independent test results and the failure-case audit are offline evaluation artifacts.
+
+The seed-42 run locked Ridge with `alpha=10` and the sparse-compatible `lsqr` solver. Spearman was 0.8131 on validation, 0.8082 on the independent test set and 0.5140 on its high-fitness subset. Ridge's test Top-20 hit rate was 0%, and its predictions ranged from −1.3898 to 4.1742. The forest achieved a 5% test Top-20 hit rate. These test observations are recorded for offline interpretation of the validation-locked models.

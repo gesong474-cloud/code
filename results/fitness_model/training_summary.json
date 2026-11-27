@@ -1,0 +1,92 @@
+{
+  "training_samples": 3000,
+  "validation_samples": 1000,
+  "seed": 42,
+  "software_versions": {
+    "python": "3.12.7",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "scikit_learn": "1.5.1",
+    "joblib": "1.4.2",
+    "matplotlib": "3.9.2"
+  },
+  "feature_memory": {
+    "one_hot": {
+      "train": {
+        "shape": [
+          3000,
+          4760
+        ],
+        "dtype": "float32",
+        "format": "csr",
+        "stored_values": 714000,
+        "matrix_bytes": 5724004
+      },
+      "validation": {
+        "shape": [
+          1000,
+          4760
+        ],
+        "dtype": "float32",
+        "format": "csr",
+        "stored_values": 238000,
+        "matrix_bytes": 1908004
+      },
+      "estimated_max_candidate_csr_bytes_per_1024_rows": 1953796,
+      "encoding_seconds_train_and_validation": 0.046588399998654495
+    },
+    "one_hot_and_mutation_count": {
+      "train": {
+        "shape": [
+          3000,
+          4761
+        ],
+        "dtype": "float32",
+        "format": "csr",
+        "stored_values": 717000,
+        "matrix_bytes": 5748004
+      },
+      "validation": {
+        "shape": [
+          1000,
+          4761
+        ],
+        "dtype": "float32",
+        "format": "csr",
+        "stored_values": 239000,
+        "matrix_bytes": 1916004
+      },
+      "estimated_max_candidate_csr_bytes_per_1024_rows": 1961988,
+      "encoding_seconds_train_and_validation": 0.04966679999961343
+    }
+  },
+  "amino_acid_order": "ACDEFGHIKLMNPQRSTVWY",
+  "sequence_length": 238,
+  "reference_input": "data/processed/gfp_wildtype.fasta",
+  "reference_sequence": "MSKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTLKFICTTGKLPVPWPTLVTTLSYGVQCFSRYPDHMKQHDFFKSAMPEGYVQERTIFFKDDGNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSHNVYIMADKQKNGIKVNFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSALSKDPNEKRDHMVLLEFVTAAGITHGMDELYK",
+  "reference_file_sha256": "2f7ef468edac9a00aab7658250d3b9ec94a96b0b3fbd5087ea561a2673cea23f",
+  "features_used": {
+    "count_only": [
+      "mutation_count"
+    ],
+    "ridge": [
+      "position_major_one_hot"
+    ],
+    "random_forest": [
+      "position_major_one_hot",
+      "mutation_count"
+    ]
+  },
+  "selected_reload_consistency": {
+    "status": "passed",
+    "max_absolute_difference": 0.0,
+    "absolute_tolerance": 1e-12
+  },
+  "training_pipeline_seconds": 268.1152860000002,
+  "serialized_model_bytes": {
+    "count_only": 1028,
+    "ridge": 8293,
+    "random_forest": 14168119,
+    "selected": 8293
+  }
+}

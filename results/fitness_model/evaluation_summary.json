@@ -1,0 +1,379 @@
+{
+  "sample_counts": {
+    "train_initial": 3000,
+    "validation": 1000,
+    "test": 5000,
+    "candidate_pool": 42714
+  },
+  "selected_model": "ridge",
+  "selection_sha256": "600491042090542dce7384673e27c2a0e8341438ce121e2bc73c2753c58c0cc9",
+  "evaluation_input_sha256": {
+    "data/splits/test.csv": "a8e563fb7ebc6d552ada386656ca5735c288faa2719b2f445d74866932d891e2",
+    "data/splits/candidate_pool.csv": "94fe4536a2dca0aab2f203fbd8e6f85e981b57f9e029b358003438801889fc14"
+  },
+  "threshold": 2.5,
+  "test_prediction_seconds_including_encoding": {
+    "count_only": 0.047122799998760456,
+    "ridge": 0.04732589999912307,
+    "random_forest": 0.6048984000008204
+  },
+  "count_baseline_fallback": {
+    "exact_count": 4999,
+    "stratification_group": 1
+  },
+  "test_metrics": {
+    "count_only": {
+      "overall": {
+        "sample_count": 5000,
+        "spearman": 0.5475442861280988,
+        "pearson": 0.580218156013436,
+        "rmse": 0.8560998382546054,
+        "mae": 0.6830062872804008,
+        "undefined_correlation_reason": null,
+        "mse": 0.7329069330595617,
+        "r2": 0.33602806375477234
+      },
+      "high_fitness": {
+        "sample_count": 2905,
+        "spearman": 0.2300898763273255,
+        "pearson": 0.21042891087058707,
+        "rmse": 0.7394640408430232,
+        "mae": 0.5929279274066808,
+        "undefined_correlation_reason": null
+      },
+      "by_mutation_count": {
+        "1": {
+          "sample_count": 105,
+          "spearman": null,
+          "pearson": null,
+          "rmse": 0.7953957063966679,
+          "mae": 0.43387765188002536,
+          "undefined_correlation_reason": "constant predicted fitness"
+        },
+        "2": {
+          "sample_count": 1235,
+          "spearman": null,
+          "pearson": null,
+          "rmse": 0.6845940153211464,
+          "mae": 0.4546673830689952,
+          "undefined_correlation_reason": "constant predicted fitness"
+        },
+        "3": {
+          "sample_count": 1192,
+          "spearman": null,
+          "pearson": null,
+          "rmse": 0.9180935280433765,
+          "mae": 0.7642973748561576,
+          "undefined_correlation_reason": "constant predicted fitness"
+        },
+        "4-5": {
+          "sample_count": 1568,
+          "spearman": 0.18343062533351612,
+          "pearson": 0.18722313365089183,
+          "rmse": 1.0138220276943022,
+          "mae": 0.9670982542955127,
+          "undefined_correlation_reason": null
+        },
+        "6-7": {
+          "sample_count": 660,
+          "spearman": 0.05519863899436014,
+          "pearson": 0.1324746019137842,
+          "rmse": 0.7339894032802967,
+          "mae": 0.4950421267397613,
+          "undefined_correlation_reason": null
+        },
+        "8-15": {
+          "sample_count": 240,
+          "spearman": 0.05896430958923973,
+          "pearson": 0.13217724007215176,
+          "rmse": 0.4441937747154046,
+          "mae": 0.22408219855102798,
+          "undefined_correlation_reason": null
+        }
+      },
+      "top_k": [
+        {
+          "k": 20,
+          "hit_rate": 0.0,
+          "mean_experimental_fitness": 3.1324064825130953,
+          "max_experimental_fitness": 3.8339493790300008
+        },
+        {
+          "k": 50,
+          "hit_rate": 0.0,
+          "mean_experimental_fitness": 3.086167929724551,
+          "max_experimental_fitness": 3.8339493790300008
+        },
+        {
+          "k": 100,
+          "hit_rate": 0.04,
+          "mean_experimental_fitness": 3.3062474392615986,
+          "max_experimental_fitness": 3.95633875726
+        }
+      ]
+    },
+    "ridge": {
+      "overall": {
+        "sample_count": 5000,
+        "spearman": 0.8082057261125494,
+        "pearson": 0.7829394853240614,
+        "rmse": 0.6568485634084866,
+        "mae": 0.5273102312046223,
+        "undefined_correlation_reason": null,
+        "mse": 0.4314500352517927,
+        "r2": 0.6091308427069775
+      },
+      "high_fitness": {
+        "sample_count": 2905,
+        "spearman": 0.513956079912974,
+        "pearson": 0.5069651911541314,
+        "rmse": 0.42296260040117656,
+        "mae": 0.3613240197387384,
+        "undefined_correlation_reason": null
+      },
+      "by_mutation_count": {
+        "1": {
+          "sample_count": 105,
+          "spearman": 0.7066763425253991,
+          "pearson": 0.6842458723443102,
+          "rmse": 0.6213553322826438,
+          "mae": 0.4577856500176877,
+          "undefined_correlation_reason": null
+        },
+        "2": {
+          "sample_count": 1235,
+          "spearman": 0.6383337939439815,
+          "pearson": 0.7235656146375399,
+          "rmse": 0.5320995080491127,
+          "mae": 0.4307057056112267,
+          "undefined_correlation_reason": null
+        },
+        "3": {
+          "sample_count": 1192,
+          "spearman": 0.7514331818715375,
+          "pearson": 0.795831631908097,
+          "rmse": 0.6155526909599898,
+          "mae": 0.4999365954169607,
+          "undefined_correlation_reason": null
+        },
+        "4-5": {
+          "sample_count": 1568,
+          "spearman": 0.7540423793017509,
+          "pearson": 0.7712227305910889,
+          "rmse": 0.7029451115961137,
+          "mae": 0.5726307317059706,
+          "undefined_correlation_reason": null
+        },
+        "6-7": {
+          "sample_count": 660,
+          "spearman": 0.3175733978853362,
+          "pearson": 0.5739140512115769,
+          "rmse": 0.7383233342646403,
+          "mae": 0.6095668606077811,
+          "undefined_correlation_reason": null
+        },
+        "8-15": {
+          "sample_count": 240,
+          "spearman": 0.07182242747269917,
+          "pearson": 0.35509896433202864,
+          "rmse": 0.8679775684058766,
+          "mae": 0.6684940803678125,
+          "undefined_correlation_reason": null
+        }
+      },
+      "top_k": [
+        {
+          "k": 20,
+          "hit_rate": 0.0,
+          "mean_experimental_fitness": 3.6950964340890002,
+          "max_experimental_fitness": 3.83896146706
+        },
+        {
+          "k": 50,
+          "hit_rate": 0.02,
+          "mean_experimental_fitness": 3.6864036614168003,
+          "max_experimental_fitness": 3.90085864018
+        },
+        {
+          "k": 100,
+          "hit_rate": 0.06,
+          "mean_experimental_fitness": 3.66478575701545,
+          "max_experimental_fitness": 3.9091519588
+        }
+      ]
+    },
+    "random_forest": {
+      "overall": {
+        "sample_count": 5000,
+        "spearman": 0.7485476616555927,
+        "pearson": 0.7843376985746674,
+        "rmse": 0.6578967602738848,
+        "mae": 0.4152628445459003,
+        "undefined_correlation_reason": null,
+        "mse": 0.4328281471788734,
+        "r2": 0.6078823517959056
+      },
+      "high_fitness": {
+        "sample_count": 2905,
+        "spearman": 0.46224098074061704,
+        "pearson": 0.34197793702742924,
+        "rmse": 0.5625345677583,
+        "mae": 0.32572490164253604,
+        "undefined_correlation_reason": null
+      },
+      "by_mutation_count": {
+        "1": {
+          "sample_count": 105,
+          "spearman": 0.6220262855771606,
+          "pearson": 0.7051337283019937,
+          "rmse": 0.5606230081836354,
+          "mae": 0.27396971833950456,
+          "undefined_correlation_reason": null
+        },
+        "2": {
+          "sample_count": 1235,
+          "spearman": 0.598001611380754,
+          "pearson": 0.7497565866564421,
+          "rmse": 0.45592985676242714,
+          "mae": 0.23354802045389128,
+          "undefined_correlation_reason": null
+        },
+        "3": {
+          "sample_count": 1192,
+          "spearman": 0.6984205206543582,
+          "pearson": 0.795928386285225,
+          "rmse": 0.567036345497939,
+          "mae": 0.33373175461736043,
+          "undefined_correlation_reason": null
+        },
+        "4-5": {
+          "sample_count": 1568,
+          "spearman": 0.5745549703532369,
+          "pearson": 0.6103321073619511,
+          "rmse": 0.8302091776579924,
+          "mae": 0.6209213715757418,
+          "undefined_correlation_reason": null
+        },
+        "6-7": {
+          "sample_count": 660,
+          "spearman": 0.15532893159242164,
+          "pearson": 0.2227413912858662,
+          "rmse": 0.7336014218742826,
+          "mae": 0.4801808432784343,
+          "undefined_correlation_reason": null
+        },
+        "8-15": {
+          "sample_count": 240,
+          "spearman": 0.044688275838122175,
+          "pearson": 0.04630781648887836,
+          "rmse": 0.4796736077952269,
+          "mae": 0.2949303264369771,
+          "undefined_correlation_reason": null
+        }
+      },
+      "top_k": [
+        {
+          "k": 20,
+          "hit_rate": 0.05,
+          "mean_experimental_fitness": 3.6079297206394996,
+          "max_experimental_fitness": 3.92602054502
+        },
+        {
+          "k": 50,
+          "hit_rate": 0.1,
+          "mean_experimental_fitness": 3.661450660473433,
+          "max_experimental_fitness": 3.96053806769
+        },
+        {
+          "k": 100,
+          "hit_rate": 0.14,
+          "mean_experimental_fitness": 3.65042730605553,
+          "max_experimental_fitness": 3.9808200503300006
+        }
+      ]
+    }
+  },
+  "selected_error_analysis": {
+    "validation": {
+      "experimental_range": [
+        1.29760196122,
+        4.11357575293
+      ],
+      "predicted_range": [
+        -1.3286552429199219,
+        3.966136932373047
+      ],
+      "training_fitness_range": [
+        1.2927631864700002,
+        4.0308440072400025
+      ],
+      "predicted_above_training_max": 0,
+      "predicted_below_training_min": 66,
+      "predicted_to_experimental_sd_ratio": 0.7370927382218548,
+      "by_fitness_band": {
+        "high": {
+          "sample_count": 568,
+          "spearman": 0.5050657390938093,
+          "pearson": 0.49843029353932006,
+          "rmse": 0.430919591963695,
+          "mae": 0.3655555625872688,
+          "undefined_correlation_reason": null,
+          "mean_residual": -0.34674841206810403
+        },
+        "low": {
+          "sample_count": 432,
+          "spearman": 0.04938610639274545,
+          "pearson": 0.062742632902139,
+          "rmse": 0.8538855144805154,
+          "mae": 0.7345848814356649,
+          "undefined_correlation_reason": null,
+          "mean_residual": 0.5191806036702012
+        }
+      }
+    },
+    "test": {
+      "experimental_range": [
+        1.29503085162,
+        4.12310906338
+      ],
+      "predicted_range": [
+        -1.3897895812988281,
+        4.174213409423828
+      ],
+      "training_fitness_range": [
+        1.2927631864700002,
+        4.0308440072400025
+      ],
+      "predicted_above_training_max": 1,
+      "predicted_below_training_min": 304,
+      "predicted_to_experimental_sd_ratio": 0.7282448960548361,
+      "by_fitness_band": {
+        "high": {
+          "sample_count": 2905,
+          "spearman": 0.513956079912974,
+          "pearson": 0.5069651911541314,
+          "rmse": 0.42296260040117656,
+          "mae": 0.3613240197387384,
+          "undefined_correlation_reason": null,
+          "mean_residual": -0.343839814748844
+        },
+        "low": {
+          "sample_count": 2095,
+          "spearman": 0.05057842986568554,
+          "pearson": 0.059670953191886235,
+          "rmse": 0.8841088015992461,
+          "mae": 0.7574724957909672,
+          "undefined_correlation_reason": null,
+          "mean_residual": 0.5508205548040634
+        }
+      }
+    }
+  },
+  "candidate_inference": {
+    "prediction_seconds": 0.40350650000073074,
+    "sample_count": 42714,
+    "all_predictions_finite": true,
+    "batch_size": 1024
+  },
+  "selected_reload_consistency_test": "passed"
+}
